@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hand Gesture Web App</title>
+        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js" integrity="sha512-AQMSn1qO6KN85GOfvH6BWJk46LhlvepblftLHzAv1cdIyTWPBKHX+r+NOXVVw6+XQpeW4LJk/GTmoP48FLvblQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>   
+    </head>
+    <body>
+        <center>
+        <button class="btn btn-warning" style="height: 30%; width: 30%; font-size: x-large;">Hand Gesture Web App <br> 👍✌🤞🙌</button>
+        <h2 style="color: white;">Take the selfie of a hand gesture and know its meaning, this model is trained for identifying these hand gestures-</h2>
+        <h2 style="color: white;">👍|👌|✌️|🙏</h2>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label>Webcam-</label>
+            <div id="camera"></div>
+            <script>
+                Webcam.set({
+                   width:350,
+                   height:300,
+                   image_format: 'png',
+                   png_quality:90
+               });
+               camera = document.getElementById("camera");
+               Webcam.attach("#camera");
+               
+                           </script>
+            <button class="btn btn-info" onclick="take_selfie()">Click</button>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label>Prediction-  <br><span id="gesture_prediction"></span><div id="update_emoji"></div></label>
+            <br><br>
+            <label>Prediction 2-  <br><span id="gesture_prediction2"></span><div id="update_emoji_2"></div></label>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <label>Snapshot-</label>
+            <div id="result"></div>
+     
+            <button class="btn btn-success" onclick="check()">Predict</button>
+ 
+        </div>
+    </center>
+    </body>
+</html>

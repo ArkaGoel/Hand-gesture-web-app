@@ -1,0 +1,18 @@
+body{
+    background-color:cyan;
+}
+#camera{
+    width: 350px;
+    height: 300px;
+    border: dotted;
+}
+#result{
+    width: 350px;
+    height: 300px;
+    border: dotted;
+}
+label{
+    color: red;
+    background-color: greenyellow;
+    border-radius: 30px;
+}
